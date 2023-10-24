@@ -1,24 +1,35 @@
 {
-    "name": "vite-library-starter",
-    "private": true,
+    "name": "@oak-digital/nextjs-curtain",
+    "private": false,
     "license": "MIT",
     "version": "0.0.0",
     "packageManager": "pnpm@8.7.5",
     "type": "module",
     "files": [
+        "dist",
         "lib"
     ],
-    "main": "./lib/cjs/main.js",
-    "module": "./lib/esm/main.js",
-    "types": "./lib/esm/main.d.ts",
+    "main": "./dist/main.umd.cjs",
+    "module": "./dist/main.js",
+    "types": "./dist/main.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/main.js",
+            "require": "./dist/main.umd.cjs"
+        }
+    },
+    "_main": "./lib/cjs/main.js",
+    "_module": "./lib/esm/main.js",
+    "_types": "./lib/esm/main.d.ts",
     "scripts": {
         "dev": "vite",
         "preview": "vite preview",
         "demo:build": "vite build",
         "demo:build:gh-pages": "vite build --base=/$(node -p \"require('./package.json').name.split('/').pop()\")/",
-        "build": "rimraf lib && pnpm build:cjs && pnpm build:esm",
-        "build:cjs": "tsc -p tsconfig.build.json",
-        "build:esm": "tsc -p tsconfig.build.esm.json",
+        "build": "vite build",
+        "_build": "rimraf lib && pnpm build:cjs && pnpm build:esm",
+        "_build:cjs": "tsc -p tsconfig.build.json",
+        "_build:esm": "tsc -p tsconfig.build.esm.json",
         "release": "bumpp",
         "lint": "eslint .",
         "format": "prettier -w .",
@@ -37,6 +48,7 @@
         "@storybook/react-vite": "^7.5.1",
         "@storybook/testing-library": "^0.2.2",
         "@types/react": "^18.2.31",
+        "@types/react-dom": "^18.2.14",
         "@typescript-eslint/eslint-plugin": "^5.59.5",
         "@typescript-eslint/parser": "^5.59.5",
         "@vitejs/plugin-react": "^4.1.0",
@@ -47,17 +59,21 @@
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-storybook": "^0.6.15",
         "eslint-plugin-vitest": "^0.0.30",
+        "next": "^13.3.4",
         "prettier": "^2.8.8",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
         "rimraf": "^5.0.0",
         "storybook": "^7.5.1",
         "typescript": "^4.9.5",
         "vite": "^4.3.5",
+        "vite-plugin-dts": "^3.6.1",
         "vitest": "^0.28.5"
     },
     "peerDependencies": {
+        "next": "13.x",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
+    },
+    "dependencies": {
+        "@oak-digital/react-curtain": "^0.1.1"
     }
 }

@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "rootDir": "./src",
-        "target": "ESNext",
+        "target": "ES2022",
         "useDefineForClassFields": true,
         "module": "ESNext",
         "lib": [
@@ -28,6 +28,7 @@
         "src/**/*"
     ],
     "exclude": [
+        "example",
         "node_modules"
     ]
 }

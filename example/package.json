@@ -1,0 +1,27 @@
+{
+    "name": "example",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@oak-digital/nextjs-curtain": "file:../",
+        "framer-motion": "^10.16.4",
+        "next": "13.5.6",
+        "react": "^18",
+        "react-dom": "^18"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "autoprefixer": "^10.0.0",
+        "postcss": "^8.0.0",
+        "tailwindcss": "^3.3.3",
+        "typescript": "^5"
+    }
+}
