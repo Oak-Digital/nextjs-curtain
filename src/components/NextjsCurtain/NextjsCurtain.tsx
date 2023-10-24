@@ -1,5 +1,5 @@
 import { Curtain, CurtainProps } from '@oak-digital/react-curtain';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
 import { FC, useEffect, useState } from 'react';
 
 export type NextjsCurtainProps = Omit<CurtainProps, 'visible'>;

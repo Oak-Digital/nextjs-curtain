@@ -6,22 +6,31 @@ import dts from 'vite-plugin-dts';
 export default defineConfig({
     /* root: 'demo', */
     plugins: [
-        react(),
         dts({
             rollupTypes: true,
         }),
+        react(),
     ],
     build: {
         outDir: 'dist',
         lib: {
             // Could also be a dictionary or array of multiple entry points
             entry: resolve(__dirname, 'src/main.ts'),
-            name: '@oak-digital/nextjs-curtain',
+            name: 'NextjsCurtain',
             // the proper extensions will be added
             fileName: 'main',
+            formats: ['es', 'umd', 'cjs'],
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'framer-motion', 'next', 'next/router'],
+            external: [
+                'react',
+                'react-dom',
+                'framer-motion',
+                'next',
+                'next/router',
+                'next/router.js',
+                'react/jsx-runtime',
+            ],
             output: {
                 // Provide global variables to use in the UMD build
                 // for externalized deps
@@ -31,6 +40,7 @@ export default defineConfig({
                     'framer-motion': 'framer-motion',
                     next: 'next',
                     'next/router': 'next/router',
+                    'next/router.js': 'next/router.js',
                 },
             },
         },
