@@ -1,3 +1,7 @@
 .bg-dark {
     background-color: #343a40;
 }
+
+.z-10 {
+    z-index: 10;
+}

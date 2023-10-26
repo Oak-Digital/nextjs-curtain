@@ -3,19 +3,22 @@ lockfileVersion: '6.0'
 dependencies:
   '@oak-digital/nextjs-curtain':
     specifier: file:../
-    version: file:..(framer-motion@10.16.4)(next@13.5.6)(react-dom@18.0.0)(react@18.0.0)
+    version: file:..(@oak-digital/react-curtain@0.2.0)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+  '@oak-digital/react-curtain':
+    specifier: ^0.2.0
+    version: 0.2.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
   framer-motion:
     specifier: ^10.16.4
-    version: 10.16.4(react-dom@18.0.0)(react@18.0.0)
+    version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: 13.5.6
-    version: 13.5.6(react-dom@18.0.0)(react@18.0.0)
+    version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
   react:
-    specifier: ^18
-    version: 18.0.0
+    specifier: ^18.2
+    version: 18.2.0
   react-dom:
-    specifier: ^18
-    version: 18.0.0(react@18.0.0)
+    specifier: ^18.2
+    version: 18.2.0(react@18.2.0)
 
 devDependencies:
   '@types/node':
@@ -47,13 +50,13 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /@cassiozen/usestatemachine@1.0.1(react@18.0.0):
+  /@cassiozen/usestatemachine@1.0.1(react@18.2.0):
     resolution: {integrity: sha512-KWik9Kj+h/Cle/8/4LTF6cWcUslrS3Us9du3JlyneMduiGYx5ZxkdkA+YOS1NxlyMp7Lztb+1cChiTOSh3AntQ==}
     engines: {node: '>=10'}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
-      react: 18.0.0
+      react: 18.2.0
     dev: false
 
   /@emotion/is-prop-valid@0.8.8:
@@ -205,17 +208,17 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@oak-digital/react-curtain@0.1.1(framer-motion@10.16.4)(react-dom@18.0.0)(react@18.0.0):
-    resolution: {integrity: sha512-GST78WepTAXEGyZ6dtrZLeyfquFTVn3GkDEv3/vMI8Zwrt0tjiJlNZrA2BzpVQEjZ6x7f/CVTx1wzmaZGr6EAA==}
+  /@oak-digital/react-curtain@0.2.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-6/YPXLU4p1SUaFT9RaI1mckMDJyUgnx/RxkY6MzUFyGgQEEV8OqBvheb9ZWA4YOmNHxcPMjS+sQWmkvxha7BuA==}
     peerDependencies:
-      framer-motion: ^10.16.4
-      react: ^18.2.0
-      react-dom: ^18.2.0
+      framer-motion: 10.x
+      react: ^18.x
+      react-dom: ^18.x
     dependencies:
-      '@cassiozen/usestatemachine': 1.0.1(react@18.0.0)
-      framer-motion: 10.16.4(react-dom@18.0.0)(react@18.0.0)
-      react: 18.0.0
-      react-dom: 18.0.0(react@18.0.0)
+      '@cassiozen/usestatemachine': 1.0.1(react@18.2.0)
+      framer-motion: 10.16.4(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@swc/helpers@0.5.2:
@@ -274,7 +277,7 @@ packages:
       postcss: ^8.0.2
     dependencies:
       browserslist: 4.22.1
-      caniuse-lite: 1.0.30001553
+      caniuse-lite: 1.0.30001554
       colorette: 1.4.0
       normalize-range: 0.1.2
       num2fraction: 1.2.2
@@ -310,8 +313,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001553
-      electron-to-chromium: 1.4.565
+      caniuse-lite: 1.0.30001554
+      electron-to-chromium: 1.4.567
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
     dev: true
@@ -328,8 +331,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001553:
-    resolution: {integrity: sha512-N0ttd6TrFfuqKNi+pMgWJTb9qrdJu4JSpgPFLe/lrD19ugC6fZgF0pUewRowDwzdDnb9V41mFcdlYgl/PyKf4A==}
+  /caniuse-lite@1.0.30001554:
+    resolution: {integrity: sha512-A2E3U//MBwbJVzebddm1YfNp7Nud5Ip+IPn4BozBmn4KqVX7AvluoIDFWjsv5OkGnKUXQVmMSoMKLa3ScCblcQ==}
 
   /chokidar@3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==}
@@ -381,8 +384,8 @@ packages:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
-  /electron-to-chromium@1.4.565:
-    resolution: {integrity: sha512-XbMoT6yIvg2xzcbs5hCADi0dXBh4//En3oFXmtPX+jiyyiCTiM9DGFT2SLottjpEs9Z8Mh8SqahbR96MaHfuSg==}
+  /electron-to-chromium@1.4.567:
+    resolution: {integrity: sha512-8KR114CAYQ4/r5EIEsOmOMqQ9j0MRbJZR3aXD/KFA8RuKzyoUB4XrUCg+l8RUGqTVQgKNIgTpjaG8YHRPAbX2w==}
     dev: true
 
   /escalade@3.1.1:
@@ -414,7 +417,7 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /framer-motion@10.16.4(react-dom@18.0.0)(react@18.0.0):
+  /framer-motion@10.16.4(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-p9V9nGomS3m6/CALXqv6nFGMuFOxbWsmaOrdmhyQimMIlLl3LC7h7l86wge/Js/8cRu5ktutS/zlzgR7eBOtFA==}
     peerDependencies:
       react: ^18.0.0
@@ -425,8 +428,8 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      react: 18.0.0
-      react-dom: 18.0.0(react@18.0.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
       tslib: 2.6.2
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -604,7 +607,7 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /next@13.5.6(react-dom@18.0.0)(react@18.0.0):
+  /next@13.5.6(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==}
     engines: {node: '>=16.14.0'}
     hasBin: true
@@ -622,11 +625,11 @@ packages:
       '@next/env': 13.5.6
       '@swc/helpers': 0.5.2
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001553
+      caniuse-lite: 1.0.30001554
       postcss: 8.4.31
-      react: 18.0.0
-      react-dom: 18.0.0(react@18.0.0)
-      styled-jsx: 5.1.1(react@18.0.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      styled-jsx: 5.1.1(react@18.2.0)
       watchpack: 2.4.0
     optionalDependencies:
       '@next/swc-darwin-arm64': 13.5.6
@@ -787,18 +790,18 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-dom@18.0.0(react@18.0.0):
-    resolution: {integrity: sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==}
+  /react-dom@18.2.0(react@18.2.0):
+    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
-      react: ^18.0.0
+      react: ^18.2.0
     dependencies:
       loose-envify: 1.4.0
-      react: 18.0.0
-      scheduler: 0.21.0
+      react: 18.2.0
+      scheduler: 0.23.0
     dev: false
 
-  /react@18.0.0:
-    resolution: {integrity: sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==}
+  /react@18.2.0:
+    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
@@ -837,8 +840,8 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
-  /scheduler@0.21.0:
-    resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
+  /scheduler@0.23.0:
+    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
     dev: false
@@ -857,7 +860,7 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: false
 
-  /styled-jsx@5.1.1(react@18.0.0):
+  /styled-jsx@5.1.1(react@18.2.0):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -871,7 +874,7 @@ packages:
         optional: true
     dependencies:
       client-only: 0.0.1
-      react: 18.0.0
+      react: 18.2.0
     dev: false
 
   /sucrase@3.34.0:
@@ -990,20 +993,19 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  file:..(framer-motion@10.16.4)(next@13.5.6)(react-dom@18.0.0)(react@18.0.0):
+  file:..(@oak-digital/react-curtain@0.2.0)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
     resolution: {directory: .., type: directory}
     id: file:..
     name: '@oak-digital/nextjs-curtain'
-    version: 0.0.0
+    version: 0.1.1
     peerDependencies:
+      '@oak-digital/react-curtain': 0.x
       next: 13.x
-      react: ^18.2.0
-      react-dom: ^18.2.0
+      react: ^18.x
+      react-dom: ^18.x
     dependencies:
-      '@oak-digital/react-curtain': 0.1.1(framer-motion@10.16.4)(react-dom@18.0.0)(react@18.0.0)
-      next: 13.5.6(react-dom@18.0.0)(react@18.0.0)
-      react: 18.0.0
-      react-dom: 18.0.0(react@18.0.0)
-    transitivePeerDependencies:
-      - framer-motion
+      '@oak-digital/react-curtain': 0.2.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false

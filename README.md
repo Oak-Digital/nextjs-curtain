@@ -7,7 +7,7 @@ A nextjs wrapper for [`@oak-digital/react-curtain`](https://github.com/oak-Digit
 `react-curtain` depends on framer-motion as a peer dependency so it is important that you install that for your project as well
 
 ```
-pnpm install @oak-digital/nextjs-curtain framer-motion
+pnpm install @oak-digital/nextjs-curtain @oak-digital/react-curtain framer-motion
 ```
 
 ## Usage
@@ -19,6 +19,7 @@ In your `pages/_app.tsx` file, wrap your components in the `<NextjsCurtain>` com
 ```ts
 // pages/_app.tsx
 import { NextjsCurtain } from '@oak-digital/nextjs-curtain';
+import '@oak-digital/react-curtain/dist/style.css'
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps }: AppProps) {

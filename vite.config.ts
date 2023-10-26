@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
+import pkg from './package.json';
 
 export default defineConfig({
     /* root: 'demo', */
@@ -30,6 +31,8 @@ export default defineConfig({
                 'next/router',
                 'next/router.js',
                 'react/jsx-runtime',
+                ...Object.keys(pkg.dependencies || {}),
+                ...Object.keys(pkg.peerDependencies || {}),
             ],
             output: {
                 // Provide global variables to use in the UMD build
