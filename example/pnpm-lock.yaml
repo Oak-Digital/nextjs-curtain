@@ -997,7 +997,7 @@ packages:
     resolution: {directory: .., type: directory}
     id: file:..
     name: '@oak-digital/nextjs-curtain'
-    version: 0.1.1
+    version: 1.0.0
     peerDependencies:
       '@oak-digital/react-curtain': 0.x
       next: 13.x
