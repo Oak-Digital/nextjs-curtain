@@ -1,6 +1,6 @@
 import { Curtain, CurtainProps } from '@oak-digital/react-curtain';
-import { useRouter } from 'next/router.js';
-import { FC, useEffect, useRef, useState } from 'react';
+import { NextRouter, useRouter } from 'next/router.js';
+import { FC, useEffect, useState, Context, ReactNode, useCallback } from 'react';
 
 export type NextjsCurtainProps = Omit<CurtainProps, 'visible'> & {
     /**
@@ -10,6 +10,13 @@ export type NextjsCurtainProps = Omit<CurtainProps, 'visible'> & {
      * By default it is a function that will return true if the route is not shallow
      */
     routeMatcher?: (route: string, options: { shallow?: boolean }) => boolean;
+    /**
+     * The nextjs router context. You should import it in your current component and pass it to this component. This is needed since the router context is exported at different locations in different next versions.
+     *
+     * @example import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime'
+     * @example import { RouterContext } from 'next/dist/shared/router-context.shared-runtime'
+     */
+    routerContext: Context<NextRouter | null>;
 };
 
 const defaultRouteMatcher: Exclude<NextjsCurtainProps['routeMatcher'], undefined> = (_url, { shallow }) => {
@@ -19,10 +26,26 @@ const defaultRouteMatcher: Exclude<NextjsCurtainProps['routeMatcher'], undefined
     return true;
 };
 
-export const NextjsCurtain: FC<NextjsCurtainProps> = ({ routeMatcher = defaultRouteMatcher, ...curtainProps }) => {
+export const NextjsCurtain: FC<NextjsCurtainProps> = ({
+    routeMatcher = defaultRouteMatcher,
+    childrenWrapper,
+    routerContext: RouterContext,
+    ...curtainProps
+}) => {
     const [visible, setVisible] = useState(false);
 
     const router = useRouter();
+
+    const internalChildrenWrapper = useCallback(
+        (children: ReactNode) => {
+            return (
+                <RouterContext.Provider value={{ ...router }}>
+                    {childrenWrapper ? childrenWrapper(children) : children}
+                </RouterContext.Provider>
+            );
+        },
+        [router, childrenWrapper]
+    );
 
     useEffect(() => {
         const handleRouteChangeStart = (
@@ -60,5 +83,5 @@ export const NextjsCurtain: FC<NextjsCurtainProps> = ({ routeMatcher = defaultRo
         };
     }, [routeMatcher]);
 
-    return <Curtain {...curtainProps} visible={visible} />;
+    return <Curtain {...curtainProps} childrenWrapper={internalChildrenWrapper} visible={visible} />;
 };
