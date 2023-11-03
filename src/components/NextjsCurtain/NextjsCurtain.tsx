@@ -16,7 +16,7 @@ export type NextjsCurtainProps = Omit<CurtainProps, 'visible'> & {
      * @example import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime'
      * @example import { RouterContext } from 'next/dist/shared/router-context.shared-runtime'
      */
-    routerContext: Context<NextRouter | null>;
+    routerContext: Context<NextRouter | null> | Context<NextRouter>;
 };
 
 const defaultRouteMatcher: Exclude<NextjsCurtainProps['routeMatcher'], undefined> = (_url, { shallow }) => {
