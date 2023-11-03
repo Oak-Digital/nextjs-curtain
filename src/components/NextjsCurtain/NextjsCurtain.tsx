@@ -16,7 +16,7 @@ export type NextjsCurtainProps = Omit<CurtainProps, 'visible'> & {
      * @example import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime'
      * @example import { RouterContext } from 'next/dist/shared/router-context.shared-runtime'
      */
-    routerContext: Context<NextRouter | null> | Context<NextRouter>;
+    routerContext?: Context<NextRouter | null> | Context<NextRouter>;
 };
 
 const defaultRouteMatcher: Exclude<NextjsCurtainProps['routeMatcher'], undefined> = (_url, { shallow }) => {
@@ -38,13 +38,17 @@ export const NextjsCurtain: FC<NextjsCurtainProps> = ({
 
     const internalChildrenWrapper = useCallback(
         (children: ReactNode) => {
+            // return children;
+            if (!RouterContext) {
+                return children;
+            }
             return (
                 <RouterContext.Provider value={{ ...router }}>
                     {childrenWrapper ? childrenWrapper(children) : children}
                 </RouterContext.Provider>
             );
         },
-        [router, childrenWrapper]
+        [router, RouterContext, childrenWrapper]
     );
 
     useEffect(() => {
