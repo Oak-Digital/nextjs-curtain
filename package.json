@@ -39,7 +39,7 @@
         "storybook:build": "storybook build"
     },
     "devDependencies": {
-        "@oak-digital/react-curtain": "^0.3.0",
+        "@oak-digital/react-curtain": "^0.4.0",
         "@storybook/addon-essentials": "^7.5.2",
         "@storybook/addon-interactions": "^7.5.2",
         "@storybook/addon-links": "^7.5.2",
@@ -72,7 +72,7 @@
         "vitest": "^0.28.5"
     },
     "peerDependencies": {
-        "@oak-digital/react-curtain": "^0.3.0",
+        "@oak-digital/react-curtain": "^0.4.0",
         "next": ">= 12 <= 14.x",
         "react": "^18.x",
         "react-dom": "^18.x"

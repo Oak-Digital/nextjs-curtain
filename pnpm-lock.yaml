@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@oak-digital/react-curtain':
-    specifier: ^0.3.0
-    version: 0.3.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.4.0
+    version: 0.4.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
   '@storybook/addon-essentials':
     specifier: ^7.5.2
     version: 7.5.2(@types/react-dom@18.2.14)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)
@@ -2064,8 +2064,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@oak-digital/react-curtain@0.3.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-MFBuSHXzqh/bfbnc3eD/1HnluWhUcSNwVErDg22FVqPGt0S0PDNpbWcm6UMzL8ppcGrlNM06+FaA+qkbInP9ig==}
+  /@oak-digital/react-curtain@0.4.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nqgx8JS+UOpyn3sGKALoh1dHGWxUjx2oxNvk6qWdOkAQvJ1c7UcrxnUZrl9vn97AuGW99+fQO69UhZXdfef6HA==}
     peerDependencies:
       framer-motion: 10.x
       react: ^18.x

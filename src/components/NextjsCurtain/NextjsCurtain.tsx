@@ -1,6 +1,6 @@
 import { Curtain, CurtainProps } from '@oak-digital/react-curtain';
 import { NextRouter, useRouter } from 'next/router.js';
-import { FC, useEffect, useState, Context, ReactNode, useCallback } from 'react';
+import { FC, useEffect, useState, Context, useMemo } from 'react';
 
 export type NextjsCurtainProps = Omit<CurtainProps, 'visible'> & {
     /**
@@ -28,28 +28,13 @@ const defaultRouteMatcher: Exclude<NextjsCurtainProps['routeMatcher'], undefined
 
 export const NextjsCurtain: FC<NextjsCurtainProps> = ({
     routeMatcher = defaultRouteMatcher,
-    childrenWrapper,
     routerContext: RouterContext,
+    contexts,
     ...curtainProps
 }) => {
     const [visible, setVisible] = useState(false);
 
     const router = useRouter();
-
-    const internalChildrenWrapper = useCallback(
-        (children: ReactNode) => {
-            // return children;
-            if (!RouterContext) {
-                return children;
-            }
-            return (
-                <RouterContext.Provider value={{ ...router }}>
-                    {childrenWrapper ? childrenWrapper(children) : children}
-                </RouterContext.Provider>
-            );
-        },
-        [router, RouterContext, childrenWrapper]
-    );
 
     useEffect(() => {
         const handleRouteChangeStart = (
@@ -87,5 +72,11 @@ export const NextjsCurtain: FC<NextjsCurtainProps> = ({
         };
     }, [routeMatcher]);
 
-    return <Curtain {...curtainProps} childrenWrapper={internalChildrenWrapper} visible={visible} />;
+    return (
+        <Curtain
+            {...curtainProps}
+            contexts={useMemo(() => (RouterContext ? [RouterContext, ...(contexts ?? [])] : contexts), [RouterContext, contexts])}
+            visible={visible}
+        />
+    );
 };
