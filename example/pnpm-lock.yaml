@@ -3,10 +3,10 @@ lockfileVersion: '6.0'
 dependencies:
   '@oak-digital/nextjs-curtain':
     specifier: file:..
-    version: file:..(@oak-digital/react-curtain@0.3.0)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
+    version: file:..(@oak-digital/react-curtain@0.4.0)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
   '@oak-digital/react-curtain':
-    specifier: 0.3.0
-    version: 0.3.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.4.0
+    version: 0.4.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
   framer-motion:
     specifier: ^10.16.4
     version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -208,8 +208,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@oak-digital/react-curtain@0.3.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-MFBuSHXzqh/bfbnc3eD/1HnluWhUcSNwVErDg22FVqPGt0S0PDNpbWcm6UMzL8ppcGrlNM06+FaA+qkbInP9ig==}
+  /@oak-digital/react-curtain@0.4.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nqgx8JS+UOpyn3sGKALoh1dHGWxUjx2oxNvk6qWdOkAQvJ1c7UcrxnUZrl9vn97AuGW99+fQO69UhZXdfef6HA==}
     peerDependencies:
       framer-motion: 10.x
       react: ^18.x
@@ -962,18 +962,18 @@ packages:
     engines: {node: '>= 14'}
     dev: true
 
-  file:..(@oak-digital/react-curtain@0.3.0)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
+  file:..(@oak-digital/react-curtain@0.4.0)(next@13.5.6)(react-dom@18.2.0)(react@18.2.0):
     resolution: {directory: .., type: directory}
     id: file:..
     name: '@oak-digital/nextjs-curtain'
-    version: 1.1.0
+    version: 1.2.0
     peerDependencies:
-      '@oak-digital/react-curtain': ^0.3.0
-      next: 13.x
+      '@oak-digital/react-curtain': ^0.4.0
+      next: '>= 12 <= 14.x'
       react: ^18.x
       react-dom: ^18.x
     dependencies:
-      '@oak-digital/react-curtain': 0.3.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
+      '@oak-digital/react-curtain': 0.4.0(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
       next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
